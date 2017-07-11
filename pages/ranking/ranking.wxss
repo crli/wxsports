@@ -1,0 +1,9 @@
+.header{
+  height: 100rpx;
+  overflow-y: scroll;
+  display: flex;
+}
+.header .item{
+/*   margin: 0 30rpx; */
+  width: 100rpx
+}

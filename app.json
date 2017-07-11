@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/ranking/ranking"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3385ff",
+    "navigationBarTitleText": "爱足球",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": true
+  }
+}

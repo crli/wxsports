@@ -1,0 +1,7 @@
+<view class="header">
+  <block wx:for="{{datas}}" wx:key>
+   
+      <view class="item">{{item.name}}</view>
+
+  </block>
+</view>    
