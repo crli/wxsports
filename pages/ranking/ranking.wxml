@@ -1,7 +1,54 @@
-<view class="header">
-  <block wx:for="{{datas}}" wx:key>
-   
-      <view class="item">{{item.name}}</view>
-
-  </block>
-</view>    
+<scroll-view>
+    <view class="header">
+        <view wx:for="{{datas}}" wx:key="label" class="item" >
+            <view class="name {{currentTab==index ? 'active' : ''}}" data-current="{{index}}" bindtap="handleClick">{{item.name}}</view>
+        </view>
+    </view>
+</scroll-view>
+<scroll-view>
+    <view class="column">
+        <view wx:for="{{datachild}}" wx:key="name" class="item" >
+            <view class="name {{currentchild==index ? 'active' : ''}}" data-current="{{index}}" bindtap="childClick">{{item.name}}</view>
+        </view>
+    </view>
+</scroll-view> 
+<scroll-view>
+  <view class="list">
+    <view wx:for="{{listbox}}" wx:key="title" wx:if="{{flag=="match"}}">
+      <view class="title">{{item.title}}</view>
+      <block wx:for="{{item.list}}" wx:for-item="list"wx:key>
+        <view class="itembox">
+          <view class="item">{{list["日期"]}}</view>
+          <view class="item">{{list["时间"]}}</view>
+          <view class="item">{{list["主队"]}}</view>
+          <view class="item">
+            <image  mode="aspectFit" style="width: 30px;height: 30px" src="{{list.zimg}}"></image>
+          </view>
+          <view class="item">{{list["比分"]}}</view>
+          <view class="item">
+            <image class="dimg" mode="scaleToFill" style="width: 30px;height: 30px" src="{{list.kimg}}"></image>
+          </view> 
+          <view class="item">{{list["客队"]}}</view>
+        </view>
+      </block>
+    </view>
+    <view wx:elif="{{flag=="jifen"}}">
+      <view class="title" wx:for="{{listbox.title}}" wx:key="title" >{{item.title}}</view>
+      <block wx:for="{{item.list}}" wx:for-item="list"wx:key>
+        <view class="itembox">
+          <view class="item">{{list["日期"]}}</view>
+          <view class="item">{{list["时间"]}}</view>
+          <view class="item">{{list["主队"]}}</view>
+          <view class="item">
+            <image  mode="aspectFit" style="width: 30px;height: 30px" src="{{list.zimg}}"></image>
+          </view>
+          <view class="item">{{list["比分"]}}</view>
+          <view class="item">
+            <image class="dimg" mode="scaleToFill" style="width: 30px;height: 30px" src="{{list.kimg}}"></image>
+          </view> 
+          <view class="item">{{list["客队"]}}</view>
+        </view>
+      </block>
+    </view>
+  </view>
+</scroll-view> 

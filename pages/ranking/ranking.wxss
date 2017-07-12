@@ -1,9 +1,51 @@
 .header{
-  height: 100rpx;
   overflow-y: scroll;
   display: flex;
+background:#fff;
 }
 .header .item{
-/*   margin: 0 30rpx; */
-  width: 100rpx
+    font-size: 14px;
+    line-height: 90rpx;
+    font-weight: 500;
+}
+.header .item .name
+{
+    display:block;width:120rpx;text-align: center;color:#666;
+}
+.header .item .name.active{
+    color: #18c1d6
+}
+.column{
+    overflow-y: scroll;
+    display: flex;
+    background:#eee;
+}
+.column .item{
+    font-size: 12px;
+    line-height: 60rpx;
+    font-weight: 500;
+}
+.column .item .name{
+    display:block;width:120rpx;text-align: center;color:#666;margin: 8px 30rpx;border-radius: 30rpx
+}
+.column .item .name.active{
+    color: #fff;
+    background: #222
+}
+.list .title{
+    text-align: center;
+    font-size: 14px;
+    margin: 20rpx 0;
+    background: #e1e1e1;
+    line-height: 60rpx;
+}
+.list .itembox{
+    padding: 0 10rpx;
+    line-height: 60rpx;
+    display: flex;
+    justify-content: space-between;
+}
+.list .itembox .item{
+
+    font-size: 13px
 }

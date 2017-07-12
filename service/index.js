@@ -24,13 +24,14 @@ const wxRequest = (params, url) => {
   })
 }
 
-
+const purl = (params) => wxRequest(params, params.url)
 
 const league = (params) => wxRequest(params, 'http://dca.qiumibao.com/shuju/public/index.php?_url=/index/league')
 
 //完赛比分params{time:2017-07-10}
 const record = (params) => wxRequest(params, 'http://m.zhibo8.cc/json/record/'+params.time+'.htm')
 module.exports = {
+  purl,
   league,
   record
 }
