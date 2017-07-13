@@ -14,39 +14,100 @@
 </scroll-view> 
 <scroll-view>
   <view class="list">
-    <view wx:for="{{listbox}}" wx:key="title" wx:if="{{flag=="match"}}">
+    <view wx:for="{{listbox}}" wx:key="title" wx:if="{{flag=='match'}}" class="match">
       <view class="title">{{item.title}}</view>
       <block wx:for="{{item.list}}" wx:for-item="list"wx:key>
         <view class="itembox">
-          <view class="item">{{list["日期"]}}</view>
-          <view class="item">{{list["时间"]}}</view>
-          <view class="item">{{list["主队"]}}</view>
-          <view class="item">
-            <image  mode="aspectFit" style="width: 30px;height: 30px" src="{{list.zimg}}"></image>
+          <view class="m-half">
+            <view class="item">{{list["日期"]}}</view>
+            <view class="item">{{list["时间"]}}</view>           
           </view>
-          <view class="item">{{list["比分"]}}</view>
-          <view class="item">
-            <image class="dimg" mode="scaleToFill" style="width: 30px;height: 30px" src="{{list.kimg}}"></image>
-          </view> 
-          <view class="item">{{list["客队"]}}</view>
+          <view class="per-half first">
+            <view class="item"><text>{{list["主队"]}}</text><image  mode="aspectFit" class="imgwh" src="{{list.zimg}}"></image></view>
+          </view>
+          <view class="per-half center">
+            <view class="item">{{list["比分"]}}</view>
+          </view>
+          <view class="per-half last">
+            <view class="item"><image class="dimg" mode="scaleToFill" class="imgwh" src="{{list.kimg}}"></image><text>{{list["客队"]}}</text></view>
+          </view>
         </view>
       </block>
     </view>
-    <view wx:elif="{{flag=="jifen"}}">
-      <view class="title" wx:for="{{listbox.title}}" wx:key="title" >{{item.title}}</view>
-      <block wx:for="{{item.list}}" wx:for-item="list"wx:key>
+    <view wx:if="{{flag=='jifen'}}" class="jifen">
+      <view class="title" >
+        <view class="half">
+          <view class="first item">球队</view>
+        </view>
+        <view class="half halfcolum">
+          <view class="item" wx:for="{{listbox.title}}" wx:key>{{item}}</view>
+        </view>
+      </view>
+      <block wx:for="{{listbox.items}}" wx:key>
         <view class="itembox">
-          <view class="item">{{list["日期"]}}</view>
-          <view class="item">{{list["时间"]}}</view>
-          <view class="item">{{list["主队"]}}</view>
-          <view class="item">
-            <image  mode="aspectFit" style="width: 30px;height: 30px" src="{{list.zimg}}"></image>
+          <view class="half ">
+            <view class="item first">{{item["排名"]}}</view>
+            <view class="item"><image  mode="aspectFit" class="img imgwh" src="{{item.timg}}"></image><text>{{item["球队"]}}</text></view>
           </view>
-          <view class="item">{{list["比分"]}}</view>
-          <view class="item">
-            <image class="dimg" mode="scaleToFill" style="width: 30px;height: 30px" src="{{list.kimg}}"></image>
+          <view class="half halfcolum">
+            <view class="item">{{item["场次"]}}</view>
+            <view class="item">{{item["胜"]}}</view>
+            <view class="item">{{item["平"]}}</view>
+            <view class="item">{{item["负"]}}</view>
+            <view class="item">{{item["进/失球"]}}</view>
+            <view class="item">{{item["积分"]}}</view>  
+          </view>    
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{flag=='goal'}}" class="goal">
+      <view class="title" >
+        <view class="item" wx:for="{{listbox.title}}" wx:key>{{item}}</view>
+      </view>
+      <block wx:for="{{listbox.items}}" wx:key>
+        <view class="itembox">
+          <view class="colum10">
+            <view class="item">{{item["排名"]}}</view>
+          </view>
+          <view class="colum30">
+            <view class="item center">{{item["球员"]}}</view>
+          </view>
+          <view class="colum30">
+            <view class="item">
+              <image  mode="aspectFit" class="img imgwh" src="{{item.timg}}"></image>
+              <text>{{item["球队"]}}</text>
+            </view>
+          </view>
+          <view class="colum20">
+            <view class="item tleft">{{item["进球"]}}</view>
+          </view>
+          <view class="colum10">
+            <view class="item center">{{item["点球"]}}</view>
           </view> 
-          <view class="item">{{list["客队"]}}</view>
+        </view>
+      </block>
+    </view>
+    <view wx:if="{{flag=='assist'}}" class="goal">
+      <view class="title" >
+        <view class="item" wx:for="{{listbox.title}}" wx:key>{{item}}</view>
+      </view>
+      <block wx:for="{{listbox.items}}" wx:key>
+        <view class="itembox">
+          <view class="colum10">
+            <view class="item">{{item["排名"]}}</view>
+          </view>
+          <view class="colum32">
+            <view class="item center">{{item["球员"]}}</view>
+          </view>
+          <view class="colum48">
+            <view class="item">
+              <image  mode="aspectFit" class="img imgwh" src="{{item.timg}}"></image>
+              <text>{{item["球队"]}}</text>
+            </view>
+          </view>
+          <view class="colum10">
+            <view class="item center">{{item["总助攻"]}}</view>
+          </view>         
         </view>
       </block>
     </view>

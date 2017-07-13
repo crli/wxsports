@@ -32,20 +32,125 @@ background:#fff;
     color: #fff;
     background: #222
 }
-.list .title{
+.list .imgwh{
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+.list .match .title{
     text-align: center;
     font-size: 14px;
     margin: 20rpx 0;
     background: #e1e1e1;
     line-height: 60rpx;
 }
-.list .itembox{
+.list .match .itembox{
     padding: 0 10rpx;
     line-height: 60rpx;
     display: flex;
     justify-content: space-between;
 }
-.list .itembox .item{
-
+.list .match .itembox .per-half{
+    
+    font-size: 13px;
+    
+}
+.list .match .itembox .per-half.first{
+    text-align: right;
+    width: 28%;
+}
+.list .match .itembox .per-half.center{
+    text-align: right;
+     width: 14%;
+     text-align: center;
+}
+.list .match .itembox .per-half.last{
+    text-align: left;
+    width: 28%;
+}
+.list .match .itembox .m-half{
+    width: 30%;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+}
+.list .match .itembox .item{
+    
     font-size: 13px
+}
+
+.list .jifen .title{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    border-bottom: 1px solid #eee;
+
+}
+.list .jifen .itembox {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+}
+.list .jifen .itembox .half,
+.list .jifen .title .half{
+    width: 50%;
+    display: flex;  
+    font-size: 13px;
+    padding: 0 10rpx;
+    line-height: 60rpx;
+}
+.list .jifen .itembox .half.halfcolum,
+.list .jifen .title .half.halfcolum{
+    justify-content: space-between;
+}
+.list .jifen .itembox .first{
+    width: 30rpx;
+}
+.list .jifen .title .first{
+    width: 160rpx;
+}
+.list .jifen .itembox .item,
+.list .jifen .title .item{
+    text-align: center;    
+}
+.list .jifen .title .item{
+    line-height: 80rpx;
+    color: #222
+}
+
+.list .goal .title{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    border-bottom: 1px solid #eee;
+    line-height: 60rpx;
+    padding: 0 10rpx
+}
+.list .goal .itembox{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding: 0 10rpx
+}
+.colum20{
+    width: 20%
+}
+.colum10{
+    width: 10%
+}
+.colum30{
+    width: 30%
+}
+.colum40{
+    width: 40%
+}
+.center{
+    text-align: center;
+}
+.tleft{
+    text-align: left
+}
+.list .goal .itembox .colum20{
+    width: 20%;
+    text-align: center;
 }
