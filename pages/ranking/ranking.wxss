@@ -32,6 +32,9 @@ background:#fff;
     color: #fff;
     background: #222
 }
+/* .list{
+    width: 100%;
+} */
 .list .imgwh{
     width: 20px;
     height: 20px;
@@ -124,7 +127,11 @@ background:#fff;
     font-size: 13px;
     border-bottom: 1px solid #eee;
     line-height: 60rpx;
-    padding: 0 10rpx
+    padding: 0 10rpx;
+    
+}
+.list .goal .title .colum36{
+    text-indent: 48rpx;
 }
 .list .goal .itembox{
     display: flex;
@@ -143,6 +150,19 @@ background:#fff;
 }
 .colum40{
     width: 40%
+}
+
+.colum36{
+    width: 36%
+}
+.colum44{
+    width: 44%
+}
+.colum48{
+    width: 48%
+}
+.colum38{
+    width: 38%
 }
 .center{
     text-align: center;

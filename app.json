@@ -5,7 +5,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "爱足球",
+    "navigationBarTitleText": "数据",
     "navigationBarTextStyle": "#fff",
     "enablePullDownRefresh": true
   }

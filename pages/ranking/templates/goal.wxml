@@ -1,0 +1,29 @@
+<template name="goal">
+  <view class="goal">
+    <view class="title" >
+      <view class="item" wx:for="{{listbox.title}}" wx:key>{{item}}</view>
+    </view>
+    <block wx:for="{{listbox.items}}" wx:key>
+      <view class="itembox">
+        <view class="colum10">
+          <view class="item">{{item["排名"]}}</view>
+        </view>
+        <view class="colum30">
+          <view class="item center">{{item["球员"]}}</view>
+        </view>
+        <view class="colum30">
+          <view class="item">
+            <image  mode="aspectFit" class="img imgwh" src="{{item.timg}}"></image>
+            <text>{{item["球队"]}}</text>
+          </view>
+        </view>
+        <view class="colum20">
+          <view class="item tleft">{{item["进球"]}}</view>
+        </view>
+        <view class="colum10">
+          <view class="item center">{{item["点球"]}}</view>
+        </view> 
+      </view>
+    </block>
+  </view>
+</template>

@@ -1,0 +1,28 @@
+<template name="jifen">
+  <view class="jifen">
+    <view class="title" >
+      <view class="half">
+        <view class="first item">球队</view>
+      </view>
+      <view class="half halfcolum">
+        <view class="item" wx:for="{{listbox.title}}" wx:key>{{item}}</view>
+      </view>
+    </view>
+    <block wx:for="{{listbox.items}}" wx:key>
+      <view class="itembox">
+        <view class="half ">
+          <view class="item first">{{item["排名"]}}</view>
+          <view class="item"><image  mode="aspectFit" class="img imgwh" src="{{item.timg}}"></image><text>{{item["球队"]}}</text></view>
+        </view>
+        <view class="half halfcolum">
+          <view class="item">{{item["场次"]}}</view>
+          <view class="item">{{item["胜"]}}</view>
+          <view class="item">{{item["平"]}}</view>
+          <view class="item">{{item["负"]}}</view>
+          <view class="item">{{item["进/失球"]}}</view>
+          <view class="item">{{item["积分"]}}</view>  
+        </view>    
+      </view>
+    </block>
+  </view>
+</template>

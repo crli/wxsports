@@ -1,0 +1,24 @@
+<template name="assist">
+  <view class="goal">
+    <block wx:for="{{listbox.items}}" wx:key>
+      <view class="itembox {{0==index ? 'title' : ''}}">
+        <view class="colum10">
+          <view class="item">{{item["排名"]}}</view>
+        </view>
+        <view class="colum44">
+          <view class="item center">{{item["球员"]}}</view>
+        </view>
+        <view class="colum36">
+          <view class="item  left">
+            <image  mode="aspectFit" class="img imgwh" wx:if="{{item.timg}}"src="{{item.timg}}"></image>
+            <text>{{item["球队"]}}</text>
+          </view>
+        </view>
+        <view class="colum10">
+          
+          <view class="item center">{{item["总计"]}}</view>
+        </view>         
+      </view>
+    </block>
+  </view>
+</template>

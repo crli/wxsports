@@ -1,0 +1,22 @@
+<template name="match">
+  <view wx:for="{{listbox}}" wx:key="title"  class="match">
+    <view class="title">{{item.title}}</view>
+    <block wx:for="{{item.list}}" wx:for-item="list"wx:key>
+      <view class="itembox">
+        <view class="m-half">
+          <view class="item">{{list["日期"]}}</view>
+          <view class="item">{{list["时间"]}}</view>           
+        </view>
+        <view class="per-half first">
+          <view class="item"><text>{{list["主队"]}}</text><image  mode="aspectFit" class="imgwh" src="{{list.zimg}}"></image></view>
+        </view>
+        <view class="per-half center">
+          <view class="item">{{list["比分"]}}</view>
+        </view>
+        <view class="per-half last">
+          <view class="item"><image class="dimg" mode="scaleToFill" class="imgwh" src="{{list.kimg}}"></image><text>{{list["客队"]}}</text></view>
+        </view>
+      </view>
+    </block>
+  </view>
+</template>

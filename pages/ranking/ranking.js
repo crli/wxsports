@@ -47,6 +47,7 @@ Page({
   showlist(current,currentchild){
     let nDatas = this.data.datas[current].list.slice().splice(0,4);
     let url = nDatas[currentchild].url;
+    console.log(url)
     api.purl({
       url:url,
       success:(res)=>{
@@ -98,11 +99,19 @@ Page({
             flag:"assist"
           })
           let nArr = {};
-          nArr.title = ["排名", "球员", "球队", "总助攻"];
+          let title = {"排名":"排名", "球员":"球员", "球队": "球队", "总计":"总计", "timg":""};
           let nData = res.data.data;
           nData.forEach((ele)=>{
             ele.timg = ele["球队图标"];
+            for(var key in ele){
+              if(key=="总助攻"){
+                ele["总计"] = ele[key]
+              }
+            }
+            
+            
           })
+          nData.unshift(title);
           nArr.items = nData;
           this.setData({
             listbox:nArr
