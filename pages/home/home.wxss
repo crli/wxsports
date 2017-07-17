@@ -1,0 +1,23 @@
+.swiper {
+  height: 360rpx;
+  width: 100%;
+  position: relative;
+}
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+.swiper .title{
+    position: absolute;
+    bottom: 0rpx;
+    left: 20rpx;
+    font-size: 18px;
+    color: #fff;
+}
+.swiper .num{
+    position: absolute;
+    bottom: 0rpx;
+    right: 25rpx;
+    font-size: 18px;
+    color: #fff;
+}

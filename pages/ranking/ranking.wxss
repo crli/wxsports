@@ -174,3 +174,28 @@ background:#fff;
     width: 20%;
     text-align: center;
 }
+
+.o-title{
+    text-align: center;
+    line-height: 60rpx;
+    background: #eee;
+    font-size: 13px;
+}
+.o-box{
+    display: flex;
+    justify-content: space-between;
+}
+.o-box .o-half{
+    display: flex;
+    width: 50%;
+    font-size: 13px;
+    padding: 0 10rpx;
+}
+.o-box .o-halfcolum{
+    justify-content: space-between;
+}
+.o-box .o-halfcolum .item{
+    width: 16.6666%;
+    text-align: center;
+    line-height: 50rpx;
+}

@@ -1,0 +1,11 @@
+<view class="head">
+  <swiper indicator-dots="{{swiper.lenght>1}}"autoplay="true" interval="5000" duration="1000" class="swiper" bindchange="handleCurrent">
+    <block wx:for="{{swiper}}" wx:key="index">
+      <swiper-item wx:if="{{item.type!='web'}}">
+        <text class="title">{{item.title}}</text>    
+        <image src="{{item.thumbnail}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+

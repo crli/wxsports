@@ -73,9 +73,18 @@ Page({
           let nArr = {};
           nArr.title = ["场次", "胜", "平", "负", "进/失球", "积分"];
           let nData = res.data.data;
-          nData.forEach((ele)=>{
-            ele.timg = ele["球队图标"]
-          })
+          if(nData[0].title){
+            nData.forEach((ele)=>{
+              ele.list.forEach((element)=>{
+                element.timg = element["球队图标"]   
+              })                      
+            })
+          }else{
+            nData.forEach((ele)=>{
+              ele.timg = ele["球队图标"]           
+            })
+          }
+          
           nArr.items = res.data.data;
           this.setData({
             listbox:nArr

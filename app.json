@@ -1,12 +1,30 @@
 {
   "pages": [
-    "pages/ranking/ranking"
+    
+    "pages/home/home",
+    "pages/ranking/ranking"    
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "数据",
+    "navigationBarTitleText": "小程序",
     "navigationBarTextStyle": "#fff",
     "enablePullDownRefresh": true
-  }
+  },
+  "tabBar": {  
+    "color": "#000",  
+    "selectedColor": "red",  
+    "borderStyle":"#000",  
+    "list": [{  
+      "selectedIconPath": "assets/img/home1.png",  
+      "iconPath": "assets/img/home.png",  
+      "pagePath": "pages/home/home",  
+      "text": "首页"  
+    }, {  
+      "selectedIconPath": "assets/img/data1.png",  
+      "iconPath": "assets/img/data.png",  
+      "pagePath": "pages/ranking/ranking",  
+      "text": "数据"  
+    }]  
+  } 
 }
