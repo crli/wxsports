@@ -8,7 +8,7 @@ Page({
     listbox:[],
     flag:'match'
   },
-  onLoad: function () {
+  onLoad () {
     api.league({
       success:(res)=>{
         if(res.data.important==-1){
@@ -25,10 +25,10 @@ Page({
       }
     })
   },
-  onPullDownRefresh: function () {
+  onPullDownRefresh () {
   
   },
-  onReachBottom: function () {
+  onReachBottom () {
   
   },
   handleClick(e){

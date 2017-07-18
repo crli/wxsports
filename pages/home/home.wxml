@@ -1,11 +1,38 @@
+
 <view class="head">
-  <swiper indicator-dots="{{swiper.lenght>1}}"autoplay="true" interval="5000" duration="1000" class="swiper" bindchange="handleCurrent">
+  <swiper indicator-dots="{{swiper.lenght>1}}"autoplay="true" interval="5000" duration="1000" class="swiper" >
     <block wx:for="{{swiper}}" wx:key="index">
-      <swiper-item wx:if="{{item.type!='web'}}">
+      <swiper-item wx:if="{{item.type!='web'}}" bindtap='toSwiper' data-id="{{item.id}}" >
         <text class="title">{{item.title}}</text>    
         <image src="{{item.thumbnail}}"/>
       </swiper-item>
     </block>
   </swiper>
 </view>
+<view class="news">
+  <block wx:for="{{news.item}}" wx:key="index">
+    <block wx:if="{{item.type=='doc'}}">
+      <view class="newsitem" >
+        <image src="{{item.thumbnail}}" class="img" mode="aspectFill"/> 
+        <view class="cont">
+          <text>{{item.title}}</text>
+          <text class="commentnum">{{item.commentsall}}</text>
+        </view>
+      </view>  
+    </block>
+    <block wx:elif="{{item.type=='slide'}}">
+      <view class="newslide" >
+        <view class="title">{{item.title}}</view>
+        <view class="imgbox">
+          <image wx:for="{{item.style.images}}" mode="aspectFill" class="img"  wx:for-item="src" src="{{src}}" wx:key="img"></image>
+        </view>
+        <text class="commentnum">{{item.commentsall}}</text>
+      </view>
+    </block>  
+  </block>
+</view>
 
+<view class="loading">
+    <view wx:if="{{hasMore}}"><text>玩命加载中...</text></view>
+    <view wx:else><text>没有更多内容了</text></view>
+</view>
