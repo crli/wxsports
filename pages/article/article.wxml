@@ -1,0 +1,12 @@
+<import src="../../utils/wxParse/wxParse.wxml"/>
+<scroll-view scroll-y="true">
+    <view class="article">
+      <view class="title">{{datas.title}}</view>
+      <view class="sourcetime">
+        <text>{{datas.updateTime}}</text><text class="source">{{datas.source}}</text>
+      </view>
+      <view class="wxParse content"> 
+        <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+      </view>
+    </view>
+</scroll-view>

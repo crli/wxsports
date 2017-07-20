@@ -1,11 +1,4 @@
-page {
-  font-family: 'Microsoft YaHei', sans-serif, -apple-system-font, 'Helvetica Neue', Helvetica;
-  height: 100%;
-  width: 100%;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-}
+
 .swiper {
   height: 360rpx;
   width: 100%;
@@ -28,6 +21,30 @@ page {
     right: 25rpx;
     font-size: 36rpx;
     color: #fff;
+}
+
+.topic{
+  width: 100%;
+  padding: 0 20rpx;
+  margin: 10rpx 0;
+}
+.box{
+  display: flex;
+  justify-content: space-between;
+}
+.category{
+  text-align: center;
+  width: 50%
+}
+.category image{
+  width: 328rpx;
+  height: 258rpx;
+}
+.category .title{
+  height: 60rpx;
+  line-height: 60rpx;
+  display: block;
+  text-align: center;
 }
 .news{
     width: 100%;

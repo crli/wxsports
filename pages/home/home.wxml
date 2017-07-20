@@ -1,35 +1,23 @@
+<import src="templates/news.wxml"/>
+<import src="templates/swiper.wxml"/>
 
 <view class="head">
-  <swiper indicator-dots="{{swiper.lenght>1}}"autoplay="true" interval="5000" duration="1000" class="swiper" >
-    <block wx:for="{{swiper}}" wx:key="index">
-      <swiper-item wx:if="{{item.type!='web'}}" bindtap='toSwiper' data-id="{{item.id}}" >
-        <text class="title">{{item.title}}</text>    
-        <image src="{{item.thumbnail}}"/>
-      </swiper-item>
-    </block>
-  </swiper>
+  <template is="swiper" data="{{swiper}}"/>
 </view>
+
+<view class="topic">
+    <view class="box">
+        <block wx:for="{{topic}}" wx:key="index">   
+            <view class="category" bindtap='toTopic' data-id="{{item.id}}">
+                <image src="{{item.thumbnail}}"></image>
+                <text class="title">{{item.title}}</text> 
+            </view>
+        </block>
+    </view>
+</view>
+
 <view class="news">
-  <block wx:for="{{news.item}}" wx:key="index">
-    <block wx:if="{{item.type=='doc'}}">
-      <view class="newsitem" >
-        <image src="{{item.thumbnail}}" class="img" mode="aspectFill"/> 
-        <view class="cont">
-          <text>{{item.title}}</text>
-          <text class="commentnum">{{item.commentsall}}</text>
-        </view>
-      </view>  
-    </block>
-    <block wx:elif="{{item.type=='slide'}}">
-      <view class="newslide" >
-        <view class="title">{{item.title}}</view>
-        <view class="imgbox">
-          <image wx:for="{{item.style.images}}" mode="aspectFill" class="img"  wx:for-item="src" src="{{src}}" wx:key="img"></image>
-        </view>
-        <text class="commentnum">{{item.commentsall}}</text>
-      </view>
-    </block>  
-  </block>
+  <template is="news" data="{{news: news.item}}"/>
 </view>
 
 <view class="loading">

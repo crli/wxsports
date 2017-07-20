@@ -1,0 +1,10 @@
+<template name="swiper">
+  <swiper indicator-dots="{{swiper.lenght>1}}"autoplay="true" interval="5000" duration="1000" class="swiper" >
+    <block wx:for="{{swiper}}" wx:key="index">
+      <swiper-item wx:if="{{item.type!='web'}}" bindtap='toCarousel' data-id="{{item.id}}" >
+        <text class="title">{{item.title}}</text>    
+        <image src="{{item.thumbnail}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</template>

@@ -29,17 +29,25 @@ const purl = (params) => wxRequest(params, params.url)
 //联赛总数据
 const league = (params) => wxRequest(params, 'http://dca.qiumibao.com/shuju/public/index.php?_url=/index/league')
 
-//完赛比分{data:{time:2017-07-10}}
+//完赛{data:{time:2017-07-10}}
 const record = (params) => wxRequest(params, 'http://m.zhibo8.cc/json/record/'+params.time+'.htm')
 
-//新闻{data:{id: 'TY43,FOCUSTY43,TYTOPIC',page: 1}}id:'轮播图 专题导航 新闻列表'
+//新闻{data:{id: 'TY43,FOCUSTY43,TYTOPIC',page: 1,gv:5.5.3}}id:' 新闻列表 轮播图 专题导航'gv视频新闻
 const news = (params) => wxRequest(params, 'https://api.iclient.ifeng.com/ClientNews')
+
+//轮播图
+const carousel = (params) => wxRequest(params, 'https://api.3g.ifeng.com/'+params.type)
+
+//单个新闻文章
+const article = (params) => wxRequest(params, 'https://api.iclient.ifeng.com/'+params.type)
 
 module.exports = {
   purl,
   league,
   record,
-  news
+  news,
+  carousel,
+  article
 }
 
 

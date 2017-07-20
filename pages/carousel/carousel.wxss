@@ -1,0 +1,49 @@
+.carousel{
+  background-color: #000;
+  height: 100%;
+  width: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-item{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.swiper-item .img{
+  width: 100%;
+}
+.content{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20rpx;
+  font-size: 34rpx;
+  color: #fff;
+  background: rgba(0,0,0,.2);
+  overflow-y: scroll;
+  height: 320rpx;
+  max-height: 320rpx;
+  z-index: 10;
+}
+.content .title{
+  display: flex;
+  justify-content: space-between;
+}
+.content .currenttitle{
+  flex: 1;
+}
+.content .currentnum{
+  width: 80rpx;
+  text-align: right;
+}
+.content .description{
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  color: #999
+}

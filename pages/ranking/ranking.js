@@ -36,12 +36,23 @@ Page({
     if( this.data.currentTab === current ) {  
       return false;  
     } else {  
-
-      this.setData({  
-        currentTab: current,
-        datachild: this.data.datas[current].list.slice().splice(0,4)
-      })
-      this.showlist(current,this.data.currentchild)
+      let list = this.data.datas[current].list;
+      if(list.length>3){
+        // 赛程，积分，射手，助攻
+        this.setData({  
+          currentTab: current,
+          datachild: list.slice().splice(0,4)
+        })
+        this.showlist(current,this.data.currentchild)
+      }else{
+        //非4项定位到赛程
+        this.setData({  
+          currentTab: current,
+          datachild: list.slice().splice(0,list.length),
+          currentchild:0
+        })
+        this.showlist(current,0)
+      }
     }  
   },
   showlist(current,currentchild){
