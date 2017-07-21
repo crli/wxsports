@@ -1,8 +1,8 @@
 <view class="carousel">
-  <swiper class="swiper" bindchange="swiperChange">
+  <swiper class="carouselbox" bindchange="swiperChange">
     <block wx:for="{{slides}}" wx:key="index">
-      <swiper-item class="swiper-item">
-          <image src="{{item.image}}" class="img" mode="widthFix"/>          
+      <swiper-item class="carousel-item">
+          <image src="{{item.image}}" class="img" mode="widthFix"/>
       </swiper-item>
       <view class="content">
         <view class="title"><text class="currenttitle">{{title}}</text><text class="currentnum">{{current}}/{{slides.length}}</text></view>

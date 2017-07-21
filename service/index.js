@@ -38,7 +38,7 @@ const news = (params) => wxRequest(params, 'https://api.iclient.ifeng.com/Client
 //轮播图
 const carousel = (params) => wxRequest(params, 'https://api.3g.ifeng.com/'+params.type)
 
-//单个新闻文章
+//新闻文章&&专题
 const article = (params) => wxRequest(params, 'https://api.iclient.ifeng.com/'+params.type)
 
 module.exports = {

@@ -1,20 +1,20 @@
 @import '../../utils/wxParse/wxParse.wxss';
 
 .title, .sourcetime{
-    padding: 0 20rpx;
+  padding: 0 20rpx;
 }
 .title{
-    font-size: 34rpx;
-    font-weight: bold;
+  font-size: 34rpx;
+  font-weight: bold;
 }
 .sourcetime{
-  font-size: 24rpx;  
+  font-size: 24rpx;
   color: #666;
   margin: 20rpx 0;
 }
 .sourcetime .source{
-    margin-left: 10rpx
+  margin-left: 10rpx
 }
 .content{
-    padding: 0 10rpx
+  padding: 0 10rpx
 }

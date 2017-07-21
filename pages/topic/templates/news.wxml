@@ -1,0 +1,24 @@
+<template name="news">
+  <text class="itemtitle"id="{{'inToView'+item.title}}">{{item.title}}</text>
+  <block wx:for="{{item.podItems}}" wx:for-item="ele" wx:key="index">
+    <block wx:if="{{!ele.hasVideo&&!ele.hasSlide}}">
+      <view class="newsitem" bindtap='toArticle' data-id="{{ele.id ? ele.id : ele.links[0].url}}">
+        <image src="{{ele.thumbnail}}" class="img" mode="aspectFill"/>
+        <view class="cont">
+          <text>{{ele.title}}</text>
+          <text class="time">{{ele.updateTime}}</text>
+          <text class="commentnum">{{ele.commentCount}}</text>
+        </view>
+      </view>
+    </block>
+    <block wx:elif="{{!ele.hasVideo&&ele.hasSlide}}">
+      <view class="newslide" >
+        <view class="title">{{ele.title}}</view>
+        <view class="imgbox" bindtap='toCarousel' data-id="{{ele.id ? ele.id : ele.links[0].url}}">
+          <image wx:for="{{ele.thumbnails}}" mode="aspectFill" class="img"  wx:for-item="src" src="{{src}}" wx:key="img"></image>
+        </view>
+        <text class="commentnum">{{item.commentCount}}</text>
+      </view>
+    </block>
+  </block>
+</template>

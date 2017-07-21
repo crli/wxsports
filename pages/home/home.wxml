@@ -1,5 +1,5 @@
 <import src="templates/news.wxml"/>
-<import src="templates/swiper.wxml"/>
+<import src="../common/swiper.wxml"/>
 
 <view class="head">
   <template is="swiper" data="{{swiper}}"/>
@@ -7,10 +7,10 @@
 
 <view class="topic">
     <view class="box">
-        <block wx:for="{{topic}}" wx:key="index">   
-            <view class="category" bindtap='toTopic' data-id="{{item.id}}">
+        <block wx:for="{{topic.item}}" wx:key="index">
+            <view class="category" bindtap='toTopic' data-id="{{item.id}}" data-title="{{item.title}}">
                 <image src="{{item.thumbnail}}"></image>
-                <text class="title">{{item.title}}</text> 
+                <text class="title">{{item.title}}</text>
             </view>
         </block>
     </view>

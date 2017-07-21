@@ -1,107 +1,22 @@
-
-.swiper {
-  height: 360rpx;
-  width: 100%;
-  position: relative;
-}
-.swiper image {
-  height: 100%;
-  width: 100%;
-}
-.swiper .title{
-    position: absolute;
-    bottom: 0rpx;
-    left: 20rpx;
-    font-size: 36rpx;
-    color: #fff;
-}
-.swiper .num{
-    position: absolute;
-    bottom: 0rpx;
-    right: 25rpx;
-    font-size: 36rpx;
-    color: #fff;
-}
-
 .topic{
-  width: 100%;
   padding: 0 20rpx;
-  margin: 10rpx 0;
+  margin: 40rpx 0 10rpx;
 }
 .box{
   display: flex;
-  justify-content: space-between;
 }
 .category{
-  text-align: center;
-  width: 50%
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .category image{
-  width: 328rpx;
-  height: 258rpx;
+  width: 134rpx;
+  height: 103rpx;
 }
 .category .title{
   height: 60rpx;
   line-height: 60rpx;
-  display: block;
-  text-align: center;
-}
-.news{
-    width: 100%;
-    height: auto;
-}
-.newsitem {
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1rpx solid #eee;
-  padding: 30rpx;
-  position: relative;
-}
-
-.newsitem .img {
-  width: 240rpx;
-  height: 140rpx;
-  margin-right: 15rpx;
-}
-.newsitem .cont{
-  flex: 1;
-    position: relative;font-size: 32rpx
-}
-.newsitem .commentnum{
-    position: absolute;
-    bottom: 0;
-    right: 0;   
-}
-.newslide{
-    position: relative;
-    border-bottom: 1rpx solid #eee;
-    padding: 0rpx 30rpx 40rpx;
-    font-size: 32rpx;
-}
-.newslide .title{
-    text-align: center;
-    line-height: 50rpx;
-    
-}
-.newslide .imgbox{
-    display: flex;
-    justify-content: space-around;
-}
-.newslide .imgbox .img{
-    padding: 10rpx;
-    height: 200rpx
-}
-.newslide .commentnum{
-    position: absolute;
-    bottom: 0;
-    right: 30rpx;   
-}
-.commentnum{
-  font-size: 26rpx;
-}
-
-.loading {
   font-size: 32rpx;
-  text-align: center;
-  padding: 40rpx;
 }

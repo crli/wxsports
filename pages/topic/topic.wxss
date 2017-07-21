@@ -1,0 +1,31 @@
+.mutiTitle{
+  width: 100%
+}
+.mutiTitle image{
+  width: 100%;
+  height: 200rpx;
+}
+.text{
+  margin: 60rpx;
+  display: block;
+  font-size: 32rpx;
+}
+.itemtitle{
+  display: block;
+  margin: 20rpx;
+  padding-bottom: 20rpx;
+  font-size: 36rpx;
+  border-bottom: 1px solid #eee;
+  color: #FF7256
+}
+.subtitle{
+  margin: 60rpx 20rpx;
+}
+.subtitle .subnav{
+  display:inline-block;
+  padding: 10rpx 20rpx;
+  border: 1px solid #eee;
+  font-size: 28rpx;
+  margin: 10rpx ;
+  border-radius: 20rpx
+}

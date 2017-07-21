@@ -1,0 +1,24 @@
+<template name="swiper">
+<!-- 首页 -->
+  <block wx:if="{{swiper}}">
+    <swiper indicator-dots="{{swiper.lenght>1}}"autoplay="true" interval="5000" duration="1000" class="swiper" >
+      <block wx:for="{{swiper}}" wx:key="index">
+        <swiper-item wx:if="{{item.type!='web'}}" bindtap='toCarousel' data-id="{{item.id}}" >
+          <text class="title">{{item.title}}</text>
+          <image src="{{item.thumbnail}}"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </block>
+<!-- 专题 -->
+  <block wx:else>
+    <swiper autoplay="true" interval="5000" duration="1000" class="swiper" >
+      <block wx:for="{{item.podItems}}" wx:for-item="ele" wx:key="index">
+        <swiper-item bindtap='toCarousel' data-id="{{ele.id ? ele.id : ele.links[0].url}}" >
+          <text class="title">{{ele.title}}</text>
+          <image src="{{ele.thumbnail}}"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </block>
+</template>

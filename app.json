@@ -5,34 +5,34 @@
     "pages/article/article",
     "pages/topic/topic",
     "pages/ranking/ranking",
-    "pages/match/match"  
+    "pages/match/match"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "小程序",
+    "navigationBarTitleText": "",
     "navigationBarTextStyle": "#fff",
     "enablePullDownRefresh": true
   },
-  "tabBar": {  
-    "color": "#000",  
-    "selectedColor": "red",  
-    "borderStyle":"#000",  
-    "list": [{  
-      "selectedIconPath": "assets/img/home1.png",  
-      "iconPath": "assets/img/home.png",  
-      "pagePath": "pages/home/home",  
-      "text": "首页"  
-    }, {  
-      "selectedIconPath": "assets/img/data1.png",  
-      "iconPath": "assets/img/data.png",  
-      "pagePath": "pages/ranking/ranking",  
-      "text": "数据"  
-    },{  
-      "selectedIconPath": "assets/img/home1.png",  
-      "iconPath": "assets/img/home.png",  
-      "pagePath": "pages/home/home",  
-      "text": "比赛"  
-    }]  
-  } 
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "red",
+    "borderStyle":"#000",
+    "list": [{
+      "selectedIconPath": "assets/img/home1.png",
+      "iconPath": "assets/img/home.png",
+      "pagePath": "pages/home/home",
+      "text": "首页"
+    }, {
+      "selectedIconPath": "assets/img/data1.png",
+      "iconPath": "assets/img/data.png",
+      "pagePath": "pages/ranking/ranking",
+      "text": "数据"
+    },{
+      "selectedIconPath": "assets/img/home1.png",
+      "iconPath": "assets/img/home.png",
+      "pagePath": "pages/home/home",
+      "text": "比赛"
+    }]
+  }
 }
