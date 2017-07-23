@@ -41,13 +41,21 @@ const carousel = (params) => wxRequest(params, 'https://api.3g.ifeng.com/'+param
 //新闻文章&&专题
 const article = (params) => wxRequest(params, 'https://api.iclient.ifeng.com/'+params.type)
 
+// 最新评论
+const newcomment = (params) => wxRequest(params, 'http://comment.ifeng.com/get?job=1&order=DESC&orderBy=create_time')
+
+// 热评
+const hotcomment = (params) => wxRequest(params, 'http://comment.ifeng.com/get?job=1&orderby=uptimes&order=DESC')
+
 module.exports = {
   purl,
   league,
   record,
   news,
   carousel,
-  article
+  article,
+  hotcomment,
+  newcomment
 }
 
 

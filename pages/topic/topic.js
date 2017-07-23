@@ -4,7 +4,7 @@ Page({
   data: {
     subjects:[],
     havetitle:[],
-    toView:''
+    toView:'to0'
   },
   onLoad (option) {
     // {type: "TopicApiForCmpp", topicid: 795,json : 'y'title:'aaa'}
@@ -24,10 +24,12 @@ Page({
         let havetitle = res.data.body.subjects.filter((ele)=>{
           return ele.title
         })
+        havetitle.forEach((ele,index)=> {
+          ele.index = index
+        });
         this.setData({
           subjects: res.data.body.subjects,
           havetitle: havetitle,
-          toView:'inToView'+havetitle[0].title
         });
       },
       fail:(err)=>{
@@ -36,9 +38,9 @@ Page({
     })
   },
   toitem(event){
-    let title = event.target.dataset.title;
+    let id = event.target.dataset.id;
     this.setData({
-     toView: 'inToView' + title
+     toView: id
     })
     console.log(this.data.toView)
   },
@@ -54,6 +56,15 @@ Page({
   toArticle(event){
     wx.navigateTo({
         url: '../article/article?' + dealurl(event) ,
+        success: (res) => {},
+        fail: (err) => {
+            console.log(err)
+        }
+    });
+  },
+  toVideo(event){
+    wx.navigateTo({
+        url: '../video/video?' + dealurl(event) ,
         success: (res) => {},
         fail: (err) => {
             console.log(err)

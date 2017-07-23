@@ -1,6 +1,10 @@
 <view class="carousel">
   <swiper class="carouselbox" bindchange="swiperChange">
     <block wx:for="{{slides}}" wx:key="index">
+      <div class="comment" wx:if="{{index==0}}" bindtap='toComment'>
+        <view class="border-dian"><view class="dian"></view></view>
+        <text class="num">{{commentnum}}</text>
+      </div>
       <swiper-item class="carousel-item">
           <image src="{{item.image}}" class="img" mode="widthFix"/>
       </swiper-item>

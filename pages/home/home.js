@@ -39,6 +39,7 @@ Page({
   },
   onLoad () {
     this.init()
+
   },
   loadMore(){
     let currentPage = this.data.news.currentPage;
@@ -48,6 +49,7 @@ Page({
         });
         return;
     }
+
     api.news({
       data:{id: 'TY43',page:++currentPage},
       success:(res)=>{

@@ -27,5 +27,36 @@
   border: 1px solid #eee;
   font-size: 28rpx;
   margin: 10rpx ;
-  border-radius: 20rpx
+  border-radius: 20rpx;
+  color:#FF7256;
+}
+.topic .newsitem .video {
+  position: relative
+}
+.topic .newsitem .video::before{
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 30rpx solid #fff;
+  border-top: 15rpx solid transparent;
+  border-bottom: 15rpx solid transparent;
+  left: 50%;
+  top: 50%;
+  margin-top: -15rpx;
+  margin-left: -7.5rpx;
+  z-index: 1
+}
+.topic .newsitem .video::after{
+  position: absolute;
+  content: "";
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  background: #000;
+  opacity: .7;
+  left: 50%;
+  top: 50%;
+  margin-left: -30rpx;
+  margin-top: -30rpx;
 }

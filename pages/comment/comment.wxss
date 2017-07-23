@@ -1,0 +1,44 @@
+.hot{
+  padding: 20rpx;
+  font-size: 36rpx;
+  color: #FF7256;
+  margin-top: 40rpx
+}
+.comment-item{
+  margin-top: 20rpx;
+  border-bottom: 1px solid #eee;
+  padding: 20rpx;
+}
+.comment-item .user{
+  font-size: 26rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+}
+.comment-item .user text{
+  margin: 0 6rpx
+}
+.comment-item .contant{
+  min-height: 100rpx;
+  font-size: 30rpx;
+  height: auto;
+  margin-bottom: 10rpx;
+}
+.comment-item .contant .parent{
+  border: 1px solid #ccc;
+  color: #666;
+  padding: 20rpx;
+}
+.comment-item .contant .parent-sub{
+  margin-right: 6rpx
+}
+.comment-item .other{
+  display: flex;
+  justify-content: space-between;
+}
+.comment-item .other .time{
+  font-size: 26rpx;
+  color: #666;
+}
+.comment-item .other .uptimes{
+  font-size: 30rpx;
+}

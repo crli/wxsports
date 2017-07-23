@@ -4,6 +4,8 @@
     "pages/carousel/carousel",
     "pages/article/article",
     "pages/topic/topic",
+    "pages/video/video",
+    "pages/comment/comment",
     "pages/ranking/ranking",
     "pages/match/match"
   ],
@@ -12,7 +14,7 @@
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "",
     "navigationBarTextStyle": "#fff",
-    "enablePullDownRefresh": true
+    "enablePullDownRefresh": false
   },
   "tabBar": {
     "color": "#000",

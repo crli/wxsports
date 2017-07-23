@@ -1,0 +1,47 @@
+<view-scroll scroll-y="true">
+  <view class="comment">
+    <block wx:if="{{hotcomment.length}}">
+      <view class="hot">热门评论</view>
+      <view class="comment-item" wx:for="{{hotcomment}}" wx:key="index">
+        <view class="user">{{item.ip_from ? item.ip_from : item.client_ip}}<text>{{item.uname}}</text></view>
+        <view class="contant">
+          <view class="cont">{{item.comment_contents}}</view>
+          <view class="parent" wx:if="{{item.parent.length}}">
+            <text class="parent-sub">--原评论：</text>{{item.parent[0].comment_contents}}
+          </view>
+        </view>
+        <view class="other">
+          <view class="time">{{item.comment_date}}</view>
+          <view class="uptimes">顶{{item.uptimes}}</view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view>暂无内容</view>
+    </block>
+    <block wx:if="{{newcomment.length}}">
+      <view class="hot">最新评论</view>
+      <view class="comment-item" wx:for="{{newcomment}}" wx:key="index">
+        <view class="user">{{item.ip_from ? item.ip_from : item.client_ip}}<text>{{item.uname}}</text></view>
+        <view class="contant">
+          <view class="cont">{{item.comment_contents}}</view>
+          <view class="parent" wx:if="{{item.parent.length}}">
+            <text class="parent-sub">--原评论：</text>{{item.parent[0].comment_contents}}
+          </view>
+        </view>
+        <view class="other">
+          <view class="time">{{item.comment_date}}</view>
+          <view class="uptimes">顶{{item.uptimes}}</view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view>暂无内容</view>
+    </block>
+  </view>
+</view-scroll>
+
+<view class="loading">
+    <view wx:if="{{hasMore}}"><text>玩命加载中...</text></view>
+    <view wx:else><text>没有更多内容了</text></view>
+</view>
