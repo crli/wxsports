@@ -2,9 +2,11 @@
 
 仿凤凰新闻体育板块+直播吧数据板块
 
-![image](https://github.com/crli/wxsports/tree/master/assets/img/wxsports1.gif)
+<p align="center">
+  <img src="./assets/img/wxsports1.gif" alt="凤凰新闻体育板块" >
+  <img src="./assets/img/wxsports2.gif" alt="直播吧数据板块" >
+</p>
 
-![image](https://github.com/crli/wxsports/tree/master/assets/img/wxsports2.gif)
 ## 项目运行
 
 ```
