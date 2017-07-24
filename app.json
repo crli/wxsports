@@ -6,8 +6,7 @@
     "pages/topic/topic",
     "pages/video/video",
     "pages/comment/comment",
-    "pages/ranking/ranking",
-    "pages/match/match"
+    "pages/ranking/ranking"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -30,11 +29,6 @@
       "iconPath": "assets/img/data.png",
       "pagePath": "pages/ranking/ranking",
       "text": "数据"
-    },{
-      "selectedIconPath": "assets/img/home1.png",
-      "iconPath": "assets/img/home.png",
-      "pagePath": "pages/home/home",
-      "text": "比赛"
     }]
   }
 }

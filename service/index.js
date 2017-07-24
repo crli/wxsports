@@ -29,10 +29,10 @@ const purl = (params) => wxRequest(params, params.url)
 //联赛总数据
 const league = (params) => wxRequest(params, 'http://dca.qiumibao.com/shuju/public/index.php?_url=/index/league')
 
-//完赛{data:{time:2017-07-10}}
+//完赛
 const record = (params) => wxRequest(params, 'http://m.zhibo8.cc/json/record/'+params.time+'.htm')
 
-//新闻{data:{id: 'TY43,FOCUSTY43,TYTOPIC',page: 1,gv:5.5.3}}id:' 新闻列表 轮播图 专题导航'gv视频新闻
+//新闻
 const news = (params) => wxRequest(params, 'https://api.iclient.ifeng.com/ClientNews')
 
 //轮播图
@@ -47,6 +47,9 @@ const newcomment = (params) => wxRequest(params, 'http://comment.ifeng.com/get?j
 // 热评
 const hotcomment = (params) => wxRequest(params, 'http://comment.ifeng.com/get?job=1&orderby=uptimes&order=DESC')
 
+//首页新闻视频
+const videoitem = (params) => wxRequest(params, 'https://api.iclient.ifeng.com/api_phoenixtv_details?guid='+params.guid)
+
 module.exports = {
   purl,
   league,
@@ -55,7 +58,8 @@ module.exports = {
   carousel,
   article,
   hotcomment,
-  newcomment
+  newcomment,
+  videoitem
 }
 
 

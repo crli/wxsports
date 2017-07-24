@@ -10,8 +10,6 @@ Page({
     commentsUrl:''
   },
   onLoad (option) {
-    // {type: "ipadtestdoc", aid: "cmpp_030170051455886"}
-    // https://api.3g.ifeng.com/ipadtestdoc?aid=cmpp_030170051455886
     let params = option;
     let type = params.type
     delete params.type;

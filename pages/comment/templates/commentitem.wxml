@@ -1,0 +1,13 @@
+<template name="commentitem">
+  <view class="user">{{item.ip_from ? item.ip_from : item.client_ip}}<text>{{item.uname}}</text></view>
+  <view class="contant">
+    <view class="cont">{{item.comment_contents}}</view>
+    <view class="parent" wx:if="{{item.parent.length}}">
+      <text class="parent-sub">--原评论：</text>{{item.parent[0].comment_contents}}
+    </view>
+  </view>
+  <view class="other">
+    <view class="time">{{item.comment_date}}</view>
+    <view class="uptimes"bindtap='upComment'>顶{{item.uptimes}}</view>
+  </view>
+</template>

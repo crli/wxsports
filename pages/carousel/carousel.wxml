@@ -2,14 +2,18 @@
   <swiper class="carouselbox" bindchange="swiperChange">
     <block wx:for="{{slides}}" wx:key="index">
       <div class="comment" wx:if="{{index==0}}" bindtap='toComment'>
-        <view class="border-dian"><view class="dian"></view></view>
+
         <text class="num">{{commentnum}}</text>
+        <view class="border-dian"><view class="dian"></view></view>
       </div>
       <swiper-item class="carousel-item">
           <image src="{{item.image}}" class="img" mode="widthFix"/>
       </swiper-item>
       <view class="content">
-        <view class="title"><text class="currenttitle">{{title}}</text><text class="currentnum">{{current}}/{{slides.length}}</text></view>
+        <view class="title">
+          <text class="currenttitle">{{title}}</text>
+          <text class="currentnum">{{current}}/{{slides.length}}</text>
+        </view>
         <view class="description"><text>{{description}}</text></view>
       </view>
     </block>

@@ -11,8 +11,11 @@ export const dealurl = (obj) => {
       // 其他
       return 'type=' + queryStr.split("?")[0] + '&' + queryStr.split("?")[1]
     }
-  }else{
+  }else if(url.indexOf("mp4")>-1){
     // 视频
     return 'type=' + url
+  }else{
+    // 首页单个视频
+    return 'video=' + url
   }
 }

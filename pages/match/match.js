@@ -1,20 +1,21 @@
 import api from '../../service/index.js'
+
 Page({
   data: {
-
+    html:''
   },
   onLoad () {
-    api.league({
-      success:(res)=>{
+    this.init()
+  },
+  init(){
 
-      }
-    })
+
   },
   onPullDownRefresh () {
-  
+
   },
   onReachBottom () {
-  
+
   },
- 
+
 })

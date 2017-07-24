@@ -1,8 +1,10 @@
 <template name="news">
   <block wx:for="{{news}}" wx:key="index">
+
     <block wx:if="{{item.type=='doc'}}">
       <view class="newsitem" bindtap='toArticle' data-id="{{item.id}}">
-        <image src="{{item.thumbnail}}" class="img" mode="aspectFill"/>
+        <image wx:if="{{item.thumbnail}}" src="{{item.thumbnail}}" class="img" mode="aspectFill"/>
+        <view wx:else class="none">暂无图片</view>
         <view class="cont">
           <text>{{item.title}}</text>
           <text class="time">{{item.updateTime}}</text>
@@ -10,15 +12,36 @@
         </view>
       </view>
     </block>
+
+    <block wx:elif="{{item.type=='phvideo'}}">
+      <view class="videoitem" >
+        <view class="title">{{item.title}}</view>
+        <image src="{{item.thumbnail}}" class="img video" mode="aspectFill" data-id="{{item.id}}" bindtap='toVideo'/>
+        <text class="commentnum">{{item.commentsall}}</text>
+      </view>
+    </block>
+
     <block wx:elif="{{item.type=='slide'}}">
       <view class="newslide" >
         <view class="title">{{item.title}}</view>
         <view class="imgbox" bindtap='toCarousel' data-id="{{item.id}}">
           <image wx:for="{{item.style.images}}" mode="aspectFill" class="img"  wx:for-item="src" src="{{src}}" wx:key="img"></image>
         </view>
-
         <text class="commentnum">{{item.commentsall}}</text>
       </view>
     </block>
+
+    <block wx:if="{{item.type=='topic2'}}">
+      <view class="newsitem" bindtap='toTopic' data-id="{{item.id}}">
+        <image wx:if="{{item.thumbnail}}" src="{{item.thumbnail}}" class="img" mode="aspectFill"/>
+        <view wx:else class="none">暂无图片</view>
+        <view class="cont">
+          <text>{{item.title}}</text>
+          <text class="subtopic">专题</text>
+          <text class="commentnum">{{item.commentsall}}</text>
+        </view>
+      </view>
+    </block>
+
   </block>
 </template>

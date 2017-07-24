@@ -5,7 +5,8 @@
 
     <block wx:if="{{ele.links[0].type == 'doc'}}">
       <view class="newsitem" bindtap='toArticle' data-id="{{ele.id ? ele.id : ele.links[0].url}}">
-        <image src="{{ele.thumbnail}}" class="img" mode="aspectFill"/>
+        <image wx:if="{{ele.thumbnail}}" src="{{ele.thumbnail}}" class="img" mode="aspectFill"/>
+        <view wx:else class="none">暂无图片</view>
         <view class="cont">
           <text>{{ele.title}}</text>
           <text class="time">{{ele.updateTime}}</text>

@@ -9,7 +9,7 @@ Page({
   },
   init(){
     api.news({
-      data:{id: 'TY43,FOCUSTY43,TYTOPIC',page: 1},
+      data:{id: 'TY43,FOCUSTY43,TYTOPIC',page: 1,gv:'5.4.0'},
       success:(res)=>{
         res.data.forEach((obj, index) => {
           if (obj.item){
@@ -51,7 +51,7 @@ Page({
     }
 
     api.news({
-      data:{id: 'TY43',page:++currentPage},
+      data:{id: 'TY43',gv:'5.4.0',page:++currentPage},
       success:(res)=>{
         let newDatas = res.data[0];
         newDatas.item = [...this.data.news.item,...newDatas.item];
@@ -85,6 +85,15 @@ Page({
   toTopic(event){
     wx.navigateTo({
         url: '../topic/topic?' + dealurl(event) ,
+        success: (res) => {},
+        fail: (err) => {
+            console.log(err)
+        }
+    });
+  },
+  toVideo(event){
+    wx.navigateTo({
+        url: '../video/video?' + dealurl(event) ,
         success: (res) => {},
         fail: (err) => {
             console.log(err)

@@ -7,8 +7,6 @@ Page({
     toView:'to0'
   },
   onLoad (option) {
-    // {type: "TopicApiForCmpp", topicid: 795,json : 'y'title:'aaa'}
-    // https://api.iclient.ifeng.com/TopicApiForCmpp?topicid=795&json=y
     let params = option;
     let title = params.title;
     wx.setNavigationBarTitle({

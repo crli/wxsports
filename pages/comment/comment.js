@@ -3,65 +3,70 @@ import api from '../../service/index.js'
 Page({
   data: {
     params : {},
-    joincount:'',
+    count:'',
     hotcomment:[],
     newcomment:[],
     hasMore: true,
-    newpage:1
+    newpage:1,
+    lastcount:''
   },
   onLoad (option) {
     wx.setNavigationBarTitle({
       title: option.title
     });
-    this.init(option)
-  },
-  init(option){
     this.setData({
       params : option
     });
-    let flag = 0;
+    this.init()
+  },
+  init(){
+
     api.newcomment({
-      data:{p:this.data.newpage,docurl:option.url},
+      data:{p:this.data.newpage,docurl:this.data.params.url},
       success:(res)=>{
+        let count = res.data.count;
         this.setData({
           newcomment : res.data.comments,
-          joincount : res.data.join_count
+          count : count
         })
-        flag++;
-        if(flag==2){
-          wx.stopPullDownRefresh();
+        if(count<20){
+          this.setData({
+            hasMore: false,
+          });
         }
+        api.hotcomment({
+          data:{p:1,docurl:this.data.params.url},
+          success:(res)=>{
+            this.setData({
+              hotcomment : res.data.comments.slice(0,10)
+            })
+            wx.stopPullDownRefresh();
+          },
+          fail:(err)=>{
+
+          },
+        })
       },
       fail:(err)=>{
 
       },
     })
-    api.hotcomment({
-      data:{p:1,docurl:option.url},
-      success:(res)=>{
-        this.setData({
-          hotcomment : res.data.comments.slice(0,10)
-        })
-        flag++;
-        if(flag==2){
-          wx.stopPullDownRefresh();
-        }
-      },
-      fail:(err)=>{
 
-      },
-    })
 
   },
   loadMore(){
-    let currentPage = this.data.newpage+1;
-    if (currentPage >= this.data.join_count/20) {
-        this.setData({
-            hasMore: false,
-        });
-        return;
+    let currentPage = this.data.newpage;
+    this.setData({
+      lastcount : this.data.count -20*currentPage
+    })
+    let lastcount = this.data.lastcount;
+    if(lastcount<0){
+      this.setData({
+        hasMore: false,
+      });
+      return
     }
-
+    currentPage++;
     api.newcomment({
       data:{p:currentPage,docurl:this.data.params.url},
       success:(res)=>{
@@ -69,7 +74,8 @@ Page({
         newDatas = [...this.data.newcomment,...newDatas];
         this.setData({
           newcomment:newDatas,
-          newpage: currentPage
+          newpage: currentPage,
+          count : res.data.count
         })
         wx.stopPullDownRefresh();
       },
@@ -77,6 +83,9 @@ Page({
 
       },
     })
+  },
+  upComment(event){
+
   },
   onPullDownRefresh () {
     this.init()

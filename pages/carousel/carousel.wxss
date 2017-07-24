@@ -17,20 +17,23 @@
   align-items: center;
   font-size: 30rpx;
   z-index: 2;
+  width: 100%;
+  flex-direction: row-reverse;
+  background: #000;
 }
 .carouselbox .comment .border-dian{
   border: 1px solid #fff;
   background: #000;
-  border-radius: 20rpx 20rpx 0 20rpx;
-  width: 80rpx;
-  height: 52rpx;
+  border-radius: 10rpx 10rpx 0 10rpx;
+  width: 56rpx;
+  height: 32rpx;
   position: relative;
 }
 .carouselbox .comment .border-dian::before{
   position: absolute;
   content: ".";
-  top: -6rpx;
-  left: 36rpx;
+  top: -12rpx;
+  left: 24rpx;
   color: #fff
 }
 .carouselbox .comment .border-dian::after{
@@ -38,10 +41,10 @@
   content: "";
   width: 0;
   height: 0;
-  border-right: 12rpx solid transparent;
-  border-left: 12rpx solid #fff;
-  border-top: 12rpx solid transparent;
-  right: -26rpx;
+  border-right: 8rpx solid transparent;
+  border-left: 8rpx solid #fff;
+  border-top: 8rpx solid transparent;
+  right: -18rpx;
   bottom: -2rpx
 }
 .carouselbox .comment .dian{
@@ -53,15 +56,15 @@
 .carouselbox .comment .dian::before{
   position: absolute;
   content: ".";
-  top: -6rpx;
-  left: 12rpx;
+  top: -12rpx;
+  left: 10rpx;
   color: #fff
 }
 .carouselbox .comment .dian::after{
   position: absolute;
   content: ".";
-  top: -6rpx;
-  right: 12rpx;
+  top: -12rpx;
+  right: 10rpx;
   color: #fff
 }
 .carouselbox .comment .num{
@@ -85,9 +88,6 @@
   font-size: 34rpx;
   color: #fff;
   background: rgba(0,0,0,.2);
-  overflow-y: scroll;
-  height: 320rpx;
-  max-height: 320rpx;
   z-index: 10;
 }
 .content .title{
@@ -104,5 +104,7 @@
 .content .description{
   padding: 20rpx 0;
   font-size: 28rpx;
-  color: #999
+  color: #999;
+  overflow-y: auto;
+  height: 320rpx
 }
